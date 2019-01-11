@@ -4,23 +4,36 @@ const data = {
             id: 1,
             term: "gefeliciteerd",
             definition: "happy birthday",
+            hint: "getting older is a happy occasion",
         },
         {
             id: 2,
             term: "prettig met je kennis te maken (kennismaken)",
             definition: "pleased to meet you",
+            hint: "it is fun to make new friends",
         },
     ]
 };
 
 
-const currentCardId = data.termSets[0].id;
-const currentCardTerm = data.termSets[0].term;
-const currentCardDefinition = data.termSets[0].definition;
-console.log(currentCardId);
-console.log(currentCardTerm);
-console.log(currentCardDefinition);
 
+
+
+
+//declare all variableas
+let index = Math.floor(Math.random() * data.termSets.length)
+console.log(index);
+
+let currentCard = data.termSets[index];
+
+let currentCardId = currentCard.id;
+let currentCardTerm = currentCard.term;
+let currentCardDefinition = currentCard.definition;
+let currentHint = currentCard.hint;
+
+// console.log(currentCardId);
+// console.log(currentCardTerm);
+// console.log(currentCardDefinition);
 
 
 /* todo 
@@ -32,22 +45,25 @@ console.log(currentCardDefinition);
 5 - 
 */
 
-function flipCard(event){
+
+
+function flipCard(event) {
     let idCard = event.target
-    
-    console.log(idCard)    
+     
     if (idCard.id === "term") {
         idCard.innerHTML = currentCardDefinition;
         idCard.setAttribute('id', 'definition')
         idCard = document.getElementById("definition");
-        console.log("Step 01" + idCard);
         
     } else {
         
         idCard.innerHTML = currentCardTerm;
         idCard.setAttribute('id', 'term')
         idCard = document.getElementById("term");
-        console.log("Step 2 works");
 
     };
 };
+
+function nextCard() {
+    currentCard = data.termSets[index]
+}

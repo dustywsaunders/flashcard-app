@@ -4,50 +4,74 @@ const data = {
             id: 1,
             term: "gefeliciteerd",
             definition: "happy birthday",
+            hint: "getting older is a happy occasion",
         },
         {
             id: 2,
             term: "prettig met je kennis te maken (kennismaken)",
             definition: "pleased to meet you",
+            hint: "it is fun to make new friends",
         },
     ]
 };
 
 
-const currentCardId = data.termSets[0].id;
-const currentCardTerm = data.termSets[0].term;
-const currentCardDefinition = data.termSets[0].definition;
-console.log(currentCardId);
-console.log(currentCardTerm);
-console.log(currentCardDefinition);
-
-
-
-/* todo 
+ /* todo 
 1 - #declare and assing var. 
 2 - # 1 eventlisten events - 
 2.2- function & else if
 3 - reassing variable 
 4 - output the value - switch
-5 - 
+5 - next card
+6 - add more data points
 */
 
-function flipCard(event){
+
+
+
+let index = Math.floor(Math.random() * data.termSets.length);
+
+
+
+//declare all variableas
+let currentCard = data.termSets[index];
+
+let currentCardId = currentCard.id;
+let currentCardTerm = currentCard.term;
+let currentCardDefinition = currentCard.definition;
+let currentHint = currentCard.hint;
+
+// console.log(currentCardId);
+// console.log(currentCardTerm);
+// console.log(currentCardDefinition);
+
+function nextCard() {
+    //update index number
+    let newIndex = Math.floor(Math.random() * data.termSets.length)
+
+    if (newIndex === index) {
+        newIndex = Math.floor(Math.random() * data.termSets.length)
+    };
+
+    index = newIndex;
+};
+
+
+function flipCard(event) {
     let idCard = event.target
-    
-    console.log(idCard)    
+     
     if (idCard.id === "term") {
         idCard.innerHTML = currentCardDefinition;
         idCard.setAttribute('id', 'definition')
         idCard = document.getElementById("definition");
-        console.log("Step 01" + idCard);
         
     } else {
         
         idCard.innerHTML = currentCardTerm;
         idCard.setAttribute('id', 'term')
         idCard = document.getElementById("term");
-        console.log("Step 2 works");
 
     };
 };
+
+

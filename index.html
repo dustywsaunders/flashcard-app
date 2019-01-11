@@ -12,8 +12,14 @@
         <H1>Flash Card App</H1>
     </header>
     <main>
-        <section onclick="flipCard(event); return true" class = "cardSet" id = "cardSet">
-            <p class="card question" id = "term">gefeliciteerd</p>
+        <section onclick = "flipCard(event); return true" class = "cardSet" id = "cardSet">
+            <p class = "card question" id = "term">gefeliciteerd</p>
+        </section>
+        <div class="tooltip">need a hint?
+            <span class="tooltiptext">getting older is a happy occasion</span>
+        </div>
+        <section>
+            <input id="nextButton" type="button" value="next flash card" onclick="nextCard();" />
         </section>
     </main>
     <footer>

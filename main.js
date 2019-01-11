@@ -40,6 +40,8 @@ let currentCardId = currentCard.id;
 let currentCardTerm = currentCard.term;
 let currentCardDefinition = currentCard.definition;
 let currentHint = currentCard.hint;
+let idCard
+
 
 // console.log(currentCardId);
 // console.log(currentCardTerm);
@@ -47,19 +49,27 @@ let currentHint = currentCard.hint;
 
 function nextCard() {
     //update index number
+
     let newIndex = Math.floor(Math.random() * data.termSets.length)
+    console.log(newIndex);
 
     if (newIndex === index) {
         newIndex = Math.floor(Math.random() * data.termSets.length)
-    };
+        index = newIndex;
+        console.log(index)
 
-    index = newIndex;
+        currentCard = data.termSets[index];
+        currentCardId = currentCard.id;
+        currentCardTerm = currentCard.term;
+        currentCardDefinition = currentCard.definition;
+        currentHint = currentCard.hint;
+    } 
 };
 
 
 function flipCard(event) {
     let idCard = event.target
-     
+
     if (idCard.id === "term") {
         idCard.innerHTML = currentCardDefinition;
         idCard.setAttribute('id', 'definition')

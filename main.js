@@ -16,14 +16,24 @@ const data = {
 };
 
 
+ /* todo 
+1 - #declare and assing var. 
+2 - # 1 eventlisten events - 
+2.2- function & else if
+3 - reassing variable 
+4 - output the value - switch
+5 - next card
+6 - add more data points
+*/
 
+
+
+
+let index = Math.floor(Math.random() * data.termSets.length);
 
 
 
 //declare all variableas
-let index = Math.floor(Math.random() * data.termSets.length)
-console.log(index);
-
 let currentCard = data.termSets[index];
 
 let currentCardId = currentCard.id;
@@ -35,16 +45,16 @@ let currentHint = currentCard.hint;
 // console.log(currentCardTerm);
 // console.log(currentCardDefinition);
 
+function nextCard() {
+    //update index number
+    let newIndex = Math.floor(Math.random() * data.termSets.length)
 
-/* todo 
-1 - #declare and assing var. 
-2 - # 1 eventlisten events - 
-2.2- function & else if
-3 - reassing variable 
-4 - output the value - switch
-5 - 
-*/
+    if (newIndex === index) {
+        newIndex = Math.floor(Math.random() * data.termSets.length)
+    };
 
+    index = newIndex;
+};
 
 
 function flipCard(event) {
@@ -64,6 +74,4 @@ function flipCard(event) {
     };
 };
 
-function nextCard() {
-    currentCard = data.termSets[index]
-}
+

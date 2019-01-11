@@ -1,0 +1,21 @@
+/* GENERAL STYLING */
+
+body {
+    background: white;
+    font-size: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* CARD SET STYLING */
+
+.cardSet {
+    display: flex;
+    justify-content: center;
+}
+
+/* INDIVIDUAL CARD STYLING */
+
+.card {
+    max-width: 30%;
+}

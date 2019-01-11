@@ -12,6 +12,24 @@ const data = {
             definition: "pleased to meet you",
             hint: "it is fun to make new friends",
         },
+        {
+            id: 3,
+            term: "doei",
+            definition: "goodbye",
+            hint: "i hate to see you go",
+        },
+        {
+            id: 4,
+            term: "beterschap!",
+            definition: "get well soon",
+            hint: "no fun when you're feeling down",
+        },
+        {
+            id: 5,
+            term: "eén taal is nooit genoeg",
+            definition: "one language is not enough",
+            hint: "html, css, javascript...where does it end?",
+        },
     ]
 };
 
@@ -47,26 +65,6 @@ let idCard
 // console.log(currentCardTerm);
 // console.log(currentCardDefinition);
 
-function nextCard() {
-    //update index number
-
-    let newIndex = Math.floor(Math.random() * data.termSets.length)
-    console.log(newIndex);
-
-    if (newIndex === index) {
-        newIndex = Math.floor(Math.random() * data.termSets.length)
-        index = newIndex;
-        console.log(index)
-
-        currentCard = data.termSets[index];
-        currentCardId = currentCard.id;
-        currentCardTerm = currentCard.term;
-        currentCardDefinition = currentCard.definition;
-        currentHint = currentCard.hint;
-    } 
-};
-
-
 function flipCard(event) {
     let idCard = event.target
 
@@ -84,4 +82,25 @@ function flipCard(event) {
     };
 };
 
+function nextCard() {
+    //update index number
+    window.location.reload(true);
 
+    let newIndex = Math.floor(Math.random() * data.termSets.length)
+    console.log(newIndex);
+
+    // if (newIndex === index) {
+    //     newIndex = Math.floor(Math.random() * data.termSets.length)
+    //     index = newIndex;
+    //     console.log(index)
+    // } 
+
+    index = newIndex;
+    currentCard = data.termSets[index];
+    currentCardId = currentCard.id;
+    currentCardTerm = currentCard.term;
+    currentCardDefinition = currentCard.definition;
+    currentHint = currentCard.hint;
+
+    
+};

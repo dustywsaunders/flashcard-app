@@ -12,10 +12,74 @@ body {
 .cardSet {
     display: flex;
     justify-content: center;
+    border: solid 1px #000;
+    width: 35%;
+    margin:  0 auto;
+    border-radius: 2%;
+    padding: 3rem 0 3rem 0;
+    box-shadow: 5px 5px 5px 0px rgba(75,90,88,0.75);
+    
+    
 }
 
-/* INDIVIDUAL CARD STYLING */
 
+
+.cardSet p{
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/*FLIP ANIMATION*/
+
+  
+  @keyframes flip {
+    from {
+      -webkit-transform: perspective(100px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -360deg);
+      transform: perspective(600px)  translate3d(0, 0, 0) rotate3d(0, 1, 0, -180deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+  
+    50% {
+      -webkit-transform: perspective(100px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -170deg);
+      transform: perspective(600px)  translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -170deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+  }
+  
+
+  @keyframes reFlip {
+    from {
+      -webkit-transform: perspective(100px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -360deg);
+      transform: perspective(600px)  translate3d(0, 0, 0) rotate3d(0, 1, 0, -180deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+  
+    50% {
+      -webkit-transform: perspective(100px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -170deg);
+      transform: perspective(600px)  translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -170deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+  }
+  
+  
 .card {
     max-width: 30%;
 }
